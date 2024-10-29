@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">CarPoolApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="submit">Submit</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="dont_have_account">Don\'t have account?<b>Sign Up</b></string>
+    <string name="sign_in">Already have an account?<b>Login here</b></string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="group_id">Group Id</string>
+    <string name="user_id">User Id</string>
+    <string name="heading">Let’s Get Started!</string>
+    <string name="description">Create an account to get all features</string>
+    <string name="pool">POOL</string>
+    <string name="log_in">sign_in</string>
+    <string name="or_sign_up_using">Or sign up using</string>
+    <string name="forgor_password">Forgor Password</string>
+    <string name="design">design</string>
+    <string name="google">google</string>
+    <string name="user_name">User Name</string>
+    <string name="user_example_com">user@example.com</string>
+    <string name="logout">Logout</string>
+
+</resources>
