@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CarPoolApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="submit">Submit</string>
+    <string name="password">password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="group_id">Group Id</string>
+    <string name="user_id">User Id</string>
+
+</resources>
