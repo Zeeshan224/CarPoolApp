@@ -26,8 +26,8 @@
             android:id="@+id/action_signInFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
         <action
-            android:id="@+id/action_signInFragment_to_userFragment"
-            app:destination="@id/userFragment" />
+            android:id="@+id/action_signInFragment_to_chatRoomFragment"
+            app:destination="@id/chatRoomFragment" />
     </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
@@ -49,4 +49,8 @@
         android:name="com.example.carpoolapp.ui.fragments.userfragment.UserFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user" />
+    <fragment
+        android:id="@+id/chatRoomFragment"
+        android:name="com.example.carpoolapp.ui.fragments.chatroomfragment.ChatRoomFragment"
+        android:label="ChatRoomFragment" />
 </navigation>

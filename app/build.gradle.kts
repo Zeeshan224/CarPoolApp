@@ -4,7 +4,7 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
     alias(libs.plugins.google.gms.google.services)
     id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -38,11 +38,11 @@ android {
         viewBinding = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
 
@@ -57,18 +57,23 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.firebase.firestore.ktx)
     testImplementation(libs.junit)
-    implementation(libs.androidx.fragment.ktx) // Or the latest version
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //Fragment
+    implementation(libs.androidx.fragment.ktx) // Or the latest version
+
+    //Google Authentication
+    implementation(libs.google.play.services.auth)
+
     //ViewModel and Coroutines for MVI
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.jetbrains.kotlinx.coroutines.play.services)
-    //hilt dependency
-    implementation(libs.hilt.android.v246) // Use the latest stable version
-    kapt(libs.hilt.compiler.v246)
 
-    implementation(libs.androidx.lifecycle.viewmodel.ktx.v261)
+    //Hilt Dependency Injection
+    implementation(libs.hilt.android.v2511) // Add this line
+    kapt(libs.hilt.compiler.v2511)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     kapt(libs.androidx.hilt.compiler.v100)
 

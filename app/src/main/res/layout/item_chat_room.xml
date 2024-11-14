@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:text="User Name"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLastMessage"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:text="Last message preview"
+        app:layout_constraintEnd_toStartOf="@id/tvTimestamp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUserName" />
+
+    <TextView
+        android:id="@+id/tvTimestamp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="12:00 PM"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUserName" />
+
+    <TextView
+        android:id="@+id/message_status"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Sent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLastMessage" />
+</androidx.constraintlayout.widget.ConstraintLayout>

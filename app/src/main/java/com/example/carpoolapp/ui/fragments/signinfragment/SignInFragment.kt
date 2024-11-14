@@ -1,6 +1,5 @@
 package com.example.carpoolapp.ui.fragments.signinfragment
 
-import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader
 import android.os.Bundle
@@ -102,7 +101,7 @@ class SignInFragment : Fragment() {
                                 .show()
 
                             val action =
-                                SignInFragmentDirections.actionSignInFragmentToUserFragment()
+                                SignInFragmentDirections.actionSignInFragmentToChatRoomFragment()
                             findNavController().navigate(action)
                         }
 
@@ -121,9 +120,14 @@ class SignInFragment : Fragment() {
         }
     }
 
+    private fun saveUser(){
+
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 }
+
 

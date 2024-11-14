@@ -1,25 +1,24 @@
 package com.example.carpoolapp.ui.fragments.chatfragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.carpoolapp.R
 import com.example.carpoolapp.databinding.FragmentChatBinding
 import com.example.carpoolapp.model.data.Chat
-import com.example.carpoolapp.model.data.Message
 import com.example.carpoolapp.model.intents.ChatIntent
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ChatFragment : Fragment() {
 
     private var _binding: FragmentChatBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: ChatViewModel by viewModels()
+    private val chatViewModel: ChatViewModel by viewModels()
     private val chatAdapter = ChatAdapter()
 
     override fun onCreateView(
@@ -40,17 +39,16 @@ class ChatFragment : Fragment() {
         }
 
         lifecycleScope.launchWhenStarted {
-            viewModel.state.collect { state ->
+            chatViewModel.state.collect { state ->
                 renderState(state)
             }
         }
 
-        viewModel.processIntent(ChatIntent.LoadMessages)
-
+        chatViewModel.processIntent(ChatIntent.LoadMessages)
         binding.sendButton.setOnClickListener {
             val message = binding.messageEditText.text.toString()
             if (message.isNotEmpty()) {
-                viewModel.processIntent(ChatIntent.SendMessage(message))
+                chatViewModel.processIntent(ChatIntent.SendMessage(message))
                 binding.messageEditText.text.clear()
             }
         }
@@ -59,9 +57,7 @@ class ChatFragment : Fragment() {
     private fun renderState(state: Chat) {
         binding.progressBar.visibility = if (state.isLoading) View.VISIBLE else View.GONE
         state.error?.let {
-
         }
-
         chatAdapter.submitList(state.messages)
     }
 

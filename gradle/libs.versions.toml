@@ -3,6 +3,9 @@ agp = "8.4.0"
 androidxHiltCompiler = "1.0.0"
 firebaseAuth = "23.1.0"
 fragmentKtx = "1.8.4"
+googleHiltAndroid = "2.51.1"
+googleHiltCompiler = "2.51.1"
+googlePlayServicesAuth = "21.2.0"
 hiltAndroid = "2.46"
 hiltAndroidVersion = "2.48"
 hiltCompiler = "1.2.0"
@@ -40,9 +43,12 @@ androidx-navigation-safe-args-gradle-plugin = { module = "androidx.navigation:na
 dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidVersion" }
 firebase-auth = { module = "com.google.firebase:firebase-auth", version.ref = "firebaseAuth" }
 google-hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidVersion" }
+google-play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "googlePlayServicesAuth" }
 hilt-android-v246 = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-android-v2511 = { module = "com.google.dagger:hilt-android", version.ref = "googleHiltAndroid" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroidVersion" }
 hilt-compiler-v246 = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltCompilerVersion" }
+hilt-compiler-v2511 = { module = "com.google.dagger:hilt-compiler", version.ref = "googleHiltCompiler" }
 jetbrains-kotlinx-coroutines-play-services = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "kotlinxCoroutinesCore" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

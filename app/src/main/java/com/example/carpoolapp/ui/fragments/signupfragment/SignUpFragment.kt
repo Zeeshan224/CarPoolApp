@@ -1,6 +1,7 @@
 package com.example.carpoolapp.ui.fragments.signupfragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import com.example.carpoolapp.R
 import com.example.carpoolapp.databinding.FragmentSignUpBinding
 import com.example.carpoolapp.model.intents.AuthIntent
 import com.example.carpoolapp.model.states.AuthViewState
@@ -74,9 +76,12 @@ class SignUpFragment : Fragment() {
                             Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT)
                                 .show()
 
-                            val action =
-                                SignUpFragmentDirections.actionSignUpFragmentToSignInFragment()
-                            findNavController().navigate(action)
+                            Log.d("SignUpFragment", "Navigating to SignInFragment")
+
+                            if (findNavController().currentDestination?.id == R.id.signUpFragment) {
+                                val action = SignUpFragmentDirections.actionSignUpFragmentToSignInFragment()
+                                findNavController().navigate(action)
+                            }
                         }
 
                         is AuthViewState.Error -> {
