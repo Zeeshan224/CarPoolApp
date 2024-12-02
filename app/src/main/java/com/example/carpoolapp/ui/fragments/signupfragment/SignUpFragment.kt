@@ -59,44 +59,6 @@ class SignUpFragment : Fragment() {
         }
     }
 
-//    private fun observeViewModel() {
-//        viewLifecycleOwner.lifecycleScope.launch {
-//            viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
-//                viewModel.state.collect { state ->
-//                    when (state) {
-//                        AuthViewState.Idle -> {
-//                            binding.pbLoading.visibility = View.GONE
-//                        }
-//
-//                        AuthViewState.IsLoading -> {
-//                            binding.pbLoading.visibility = View.VISIBLE
-//                        }
-//
-//                        is AuthViewState.Success -> {
-//                            binding.pbLoading.visibility = View.GONE
-//                            Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT)
-//                                .show()
-//
-//                            Log.d("SignUpFragment", "Navigating to SignInFragment")
-//
-//                            if (findNavController().currentDestination?.id == R.id.signUpFragment) {
-//                                val action = SignUpFragmentDirections.actionSignUpFragmentToSignInFragment()
-//                                findNavController().navigate(action)
-//                            }
-//                        }
-//
-//                        is AuthViewState.Error -> {
-//                            binding.pbLoading.visibility = View.GONE
-//                            Toast.makeText(requireContext(), state.error, Toast.LENGTH_SHORT).show()
-//                        }
-//
-//                        is AuthViewState.ForgotPasswordSuccess -> {}
-//                    }
-//                }
-//            }
-//        }
-//    }
-
     private fun observeViewModel() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -125,6 +87,7 @@ class SignUpFragment : Fragment() {
                             Toast.makeText(requireContext(), state.error, Toast.LENGTH_SHORT).show()
                         }
                         is AuthViewState.ForgotPasswordSuccess -> {}
+                        is AuthViewState.PhoneVerificationPhoneSent -> {}
                     }
                 }
             }

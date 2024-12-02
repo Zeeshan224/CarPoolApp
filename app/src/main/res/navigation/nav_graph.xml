@@ -43,7 +43,12 @@
         android:id="@+id/chatFragment"
         android:name="com.example.carpoolapp.ui.fragments.chatfragment.ChatFragment"
         android:label="ChatFragment"
-        tools:layout="@layout/fragment_chat"/>
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="chatId"
+            app:argType="string"/>
+
+    </fragment>
     <fragment
         android:id="@+id/userFragment"
         android:name="com.example.carpoolapp.ui.fragments.userfragment.UserFragment"
@@ -52,9 +57,20 @@
     <fragment
         android:id="@+id/chatRoomFragment"
         android:name="com.example.carpoolapp.ui.fragments.chatroomfragment.ChatRoomFragment"
-        android:label="ChatRoomFragment" >
+        android:label="ChatRoomFragment"
+        tools:layout="@layout/fragment_chat_room">
         <action
             android:id="@+id/action_chatRoomFragment_to_chatFragment"
             app:destination="@id/chatFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/PhoneAuthBottomSheet"
+        android:name="com.example.carpoolapp.ui.fragments.PhoneAuthBottomSheet"
+        android:label="PhoneAuthBottomSheet"
+        tools:layout="@layout/fragment_phone_auth">
+        <action
+            android:id="@+id/action_phoneAuthBottomSheet_to_chatRoomFragment"
+            app:destination="@id/chatRoomFragment" />
     </fragment>
 </navigation>

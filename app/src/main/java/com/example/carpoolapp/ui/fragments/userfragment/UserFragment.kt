@@ -45,6 +45,7 @@ class UserFragment : Fragment() {
             }
         }
     }
+
     private fun logout() {
         FirebaseAuth.getInstance().signOut()
         Toast.makeText(requireContext(), "Logged out successfully", Toast.LENGTH_SHORT).show()

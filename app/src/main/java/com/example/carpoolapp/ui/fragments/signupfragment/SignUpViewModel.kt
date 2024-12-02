@@ -35,6 +35,9 @@ class SignUpViewModel : ViewModel() {
                     is AuthIntent.SignUp -> signUp(intent.userName, intent.email, intent.password)
                     is AuthIntent.LogIn -> {}
                     is AuthIntent.ForgotPassword -> {}
+                    is AuthIntent.GoogleSignIn -> {}
+                    is AuthIntent.PhoneSignIn -> {}
+                    is AuthIntent.VerifyOTP -> {}
                 }
             }
         }

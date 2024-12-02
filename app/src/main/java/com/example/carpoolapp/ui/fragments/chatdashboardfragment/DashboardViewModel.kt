@@ -17,7 +17,6 @@ import kotlinx.coroutines.tasks.await
 
 class DashboardViewModel : ViewModel() {
 
-
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
 
@@ -29,6 +28,7 @@ class DashboardViewModel : ViewModel() {
     init {
         handleIntents()
     }
+
     private fun handleIntents() {
         viewModelScope.launch {
             userIntent.consumeAsFlow().collect { intent ->

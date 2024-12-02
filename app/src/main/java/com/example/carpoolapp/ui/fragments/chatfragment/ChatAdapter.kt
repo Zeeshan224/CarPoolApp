@@ -1,6 +1,5 @@
 package com.example.carpoolapp.ui.fragments.chatfragment
 
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -36,5 +35,4 @@ class ChatAdapter : ListAdapter<Message, ChatAdapter.SentMessageViewHolder>(Diff
         override fun areContentsTheSame(oldItem: Message, newItem: Message) = oldItem == newItem
     }
 }
-
 

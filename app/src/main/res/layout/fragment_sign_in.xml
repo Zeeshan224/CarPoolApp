@@ -93,7 +93,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password"
-        android:text="@string/forgor_password"
+        android:text="@string/forgot_password"
         android:textStyle="bold"
         android:layout_marginEnd="@dimen/__16sdp"
         android:layout_marginTop="@dimen/__16sdp"/>
@@ -104,7 +104,7 @@
         android:layout_height="wrap_content"
         android:text="@string/log_in"
         android:textColor="@color/white"
-        android:layout_marginTop="@dimen/__28sdp"
+        android:layout_marginTop="@dimen/__16sdp"
         app:layout_constraintTop_toBottomOf="@id/forgot_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,18 +120,30 @@
         android:layout_height="wrap_content"
         android:text="@string/or_sign_up_using"
         app:layout_constraintTop_toBottomOf="@id/btnSignIn"
-        android:layout_marginTop="@dimen/__38sdp"
+        android:layout_marginTop="@dimen/__16sdp"
         android:gravity="center"/>
 
     <ImageView
+        android:id="@+id/btn_google_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_google"
         android:contentDescription="@string/google"
         app:layout_constraintTop_toBottomOf="@id/tv_or_sign_up"
-        android:layout_marginTop="@dimen/__16sdp"
+        android:layout_marginTop="@dimen/__8sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/btn_number_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in using number"
+        android:layout_marginTop="@dimen/_8ssp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/btn_google_sign_in"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_sign_up"

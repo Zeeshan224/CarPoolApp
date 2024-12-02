@@ -27,7 +27,7 @@ class ChatDashboardFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding=FragmentDashboardBinding.inflate(layoutInflater)
         return binding.root
     }

@@ -16,10 +16,12 @@
     <string name="pool">POOL</string>
     <string name="log_in">sign_in</string>
     <string name="or_sign_up_using">Or sign up using</string>
-    <string name="forgor_password">Forgor Password</string>
+    <string name="forgot_password">Forgot Password</string>
     <string name="design">design</string>
     <string name="google">google</string>
     <string name="user_name">User Name</string>
+    <string name="chat_id">chatId</string>
+    <string name="default_web_client_id">YOUR_WEB_CLIENT_ID</string>
     <string name="user_example_com">user@example.com</string>
     <string name="logout">Logout</string>
     <string name="no_message">No Messages Yet</string>

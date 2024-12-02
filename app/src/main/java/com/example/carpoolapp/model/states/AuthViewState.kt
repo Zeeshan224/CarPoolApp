@@ -6,4 +6,5 @@ sealed class AuthViewState {
     data class Success(val message: String) : AuthViewState()
     data class Error(val error: String) : AuthViewState()
     data class ForgotPasswordSuccess(val message: String) : AuthViewState()
+    data class PhoneVerificationPhoneSent(val message: String) : AuthViewState()
 }

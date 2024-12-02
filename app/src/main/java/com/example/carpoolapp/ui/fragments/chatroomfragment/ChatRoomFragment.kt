@@ -1,6 +1,7 @@
 package com.example.carpoolapp.ui.fragments.chatroomfragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,14 +14,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.carpoolapp.databinding.FragmentChatRoomBinding
 import com.example.carpoolapp.model.states.ChatRoom
 import com.example.carpoolapp.model.states.ChatRoomState
+import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class ChatRoomFragment : Fragment() {
 
     private var _binding: FragmentChatRoomBinding? = null
     private val binding get() = _binding!!
     private val viewModel: ChatRoomViewModel by viewModels()
     private lateinit var chatRoomAdapter: ChatRoomAdapter
+    private lateinit var currentUserId: String
+    private lateinit var recipientId: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,13 +39,18 @@ class ChatRoomFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        currentUserId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
+
+        recipientId = arguments?.getString("recipientId") ?: ""
+
         setupRecyclerView()
         observeState()
     }
 
     private fun setupRecyclerView() {
         chatRoomAdapter = ChatRoomAdapter{
-            val action = ChatRoomFragmentDirections.actionChatRoomFragmentToChatFragment()
+            val chatId = viewModel.getChatId(currentUserId, recipientId)
+            val action = ChatRoomFragmentDirections.actionChatRoomFragmentToChatFragment(chatId)
             findNavController().navigate(action)
         }
 
@@ -53,9 +64,12 @@ class ChatRoomFragment : Fragment() {
         lifecycleScope.launch {
             viewModel.state.collect { state ->
                 when(state) {
-                    is ChatRoomState.Success -> showChatRooms(state.chatRooms)
+                    is ChatRoomState.Success -> {
+                        Log.d("ChatRoomFragment", "State Success: ${state.chatRooms}")
+                        showChatRooms(state.chatRooms)
+                    }
                     is ChatRoomState.Error -> showError(state.message)
-                    ChatRoomState.Empty -> {}
+                    ChatRoomState.Empty -> Log.d("ChatRoomFragment", "State Empty")
                 }
             }
         }

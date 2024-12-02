@@ -64,7 +64,8 @@ dependencies {
     implementation(libs.androidx.fragment.ktx) // Or the latest version
 
     //Google Authentication
-    implementation(libs.google.play.services.auth)
+//    implementation(libs.google.play.services.auth)
+    implementation(libs.play.services.auth.v2070)
 
     //ViewModel and Coroutines for MVI
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
@@ -79,6 +80,10 @@ dependencies {
 
     implementation(libs.sdp.android)
     implementation(libs.ssp.android)
+
+    implementation(libs.firebase.database)
+
+    implementation(platform(libs.firebase.bom))
 
     //Firebase Authentication
     implementation(libs.firebase.auth)
